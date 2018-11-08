@@ -78,7 +78,6 @@ class MySQL extends Database {
             $exist = 0;
 
             foreach ($users as $user) {
-                echo ' - Creando nuevo usuario...<br>';
                 if ($this->traerUsuario($user->getEmail()) !== null) {
                     $cout++;
                     $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -104,7 +103,6 @@ class MySQL extends Database {
             }
 
             echo "<br>Se crearon $count usuarios correctamente";
-            echo "<br> $exist usuarios ya existian";
         } else {
            echo 'Hubo un error al crear la tabla usuarios';
         }
